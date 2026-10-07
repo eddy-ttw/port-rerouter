@@ -9,18 +9,19 @@ Features:
 * Automated route table configuration
 * User-defined port number
 * User-defined domain support
+* Config file for all user-defined variables
 
 
 Planned features:
-* Config file for all user-defined variables
+* Verify if routing is working
+* Removing routes support
 
 
 For v1.0:
 * Automated checking domain of IP changes
 * Option to skip either IPv4/v6 checking
-* Verify if routing is working
 * Error handling and log file support
-* Removing routes support
+
 
 Beyond:
 * SystemD service support
