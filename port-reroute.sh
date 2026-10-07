@@ -2,24 +2,35 @@
 
 # (C) 2026 Andre Grindstaff (eddy-ttw)
 
-# Port rerouter v0.3.1
+# Port rerouter v0.3.2.0
 
 # added legacy IP support for clients connecting over v4
 
 
-# variables
+# Variables
 # -----------
+
+# domain (source) to get its IP from
+domain='source.domain.com'
+
 
 # port #:
 port=25565
 
 
+
+# Processing
+# -----------
+
+# do not modify the lines below!
+
+
 # get the raw IP:
-ip=$(dig AAAA +short source.domain.com)
+ip=$(dig AAAA +short '${domain}')
 	# ipv6 because we aren't boomers
 
 # ipv4 for legacy
-ipv4=$(dig A +short source.domain.com)
+ipv4=$(dig A +short '${domain}')
 
 
 # set up pre-routing
@@ -48,4 +59,3 @@ iptables -t nat -A POSTROUTING -p tcp -d ${ipv4} --dport $port -j MASQUERADE
 
 
 # fin
-

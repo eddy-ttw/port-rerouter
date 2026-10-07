@@ -8,14 +8,14 @@ from one host to another.
 Features:
 * Automated route table configuration
 * User-defined port number
+* User-defined domain support
 
 
 Planned features:
-* User-defined domain support
 * Config file for all user-defined variables
 
 
-For v1.0:
+For v1.x:
 * Automated checking domain of IP changes
 * Option to skip either IPv4/v6 checking
 * Verify if routing is working
