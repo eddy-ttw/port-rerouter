@@ -2,7 +2,7 @@
 
 # (C) 2026 Andre Grindstaff (eddy-ttw)
 
-# Port rerouter v0.4.0.1
+# Port rerouter v0.4.0.2
 
 # TODO: add config file support!
 
@@ -29,7 +29,7 @@ no_ipv4=0
 no_ipv6=0
 
 # internal
-ver=0.4.0.1
+ver=0.4.0.2
 
 
 # Get config
@@ -115,6 +115,7 @@ init () {
 main () {
 	echo "Port Rerouter v${ver}"
 	
+	get_config
 	get_ip
 	
 	# future release will have switching
