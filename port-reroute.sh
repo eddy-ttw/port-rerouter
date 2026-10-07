@@ -2,7 +2,7 @@
 
 # (C) 2026 Andre Grindstaff (eddy-ttw)
 
-# Port rerouter v0.4.0.0
+# Port rerouter v0.4.0.1
 
 # TODO: add config file support!
 
@@ -29,18 +29,20 @@ no_ipv4=0
 no_ipv6=0
 
 # internal
-ver=0.4.0.0
+ver=0.4.0.1
 
 
 # Get config
 get_config () {
 	if [ -f "$PWD/portreroute.cfg" ]; then
         config_path="$PWD/portreroute.cfg"
+    elif [ -f "$PWD/config.cfg" ]; then
+        config_path="$PWD/config.cfg"    
     elif [ -f "/opt/eddyttw0/port-rerouter/config.cfg" ]; then
         config_path="/opt/eddyttw0/port-rerouter/config.cfg"
 	elif [ -f "/opt/eddyttw0/port-reroute/config.cfg" ]; then
         config_path="/opt/eddyttw0/port-reroute/config.cfg"
-        
+
     elif [ -f "/opt/eddyttw0/port-rerouter/portreroute.cfg" ]; then
         config_path="/opt/eddyttw0/port-rerouter/portreroute.cfg"
 	elif [ -f "/opt/eddyttw0/port-reroute/config.cfg" ]; then
@@ -69,7 +71,12 @@ get_ip () {
 	ipv4=$(dig A +short ${domain})
 }
 
-do_routing {
+chk_ip () {
+	echo [TODO] Will check IPs in next update...
+}
+
+
+do_routing () {
 	# set up pre-routing
 
 	ip6tables -t nat -C PREROUTING -p tcp --dport $port -j DNAT \
@@ -85,7 +92,7 @@ do_routing {
 }
 
 
-do_routing_v4 {
+do_routing_v4 () {
 	# pre-routing for legacy IP
 
 	iptables -t nat -C PREROUTING -p tcp --dport $port -j DNAT \
@@ -101,7 +108,11 @@ do_routing_v4 {
 
 }
 
-main {
+init () {
+	echo [TODO] Will be implemented...
+}
+
+main () {
 	echo "Port Rerouter v${ver}"
 	
 	get_ip
@@ -112,5 +123,5 @@ main {
 	do_routing_v4
 }
 
-
+main
 # fin
