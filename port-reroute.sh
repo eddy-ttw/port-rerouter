@@ -2,7 +2,7 @@
 
 # (C) 2026 Andre Grindstaff (eddy-ttw)
 
-# Port rerouter v0.3.2.0
+# Port rerouter v0.3.2.1
 
 # added legacy IP support for clients connecting over v4
 
@@ -26,11 +26,11 @@ port=25565
 
 
 # get the raw IP:
-ip=$(dig AAAA +short '${domain}')
+ip=$(dig AAAA +short ${domain})
 	# ipv6 because we aren't boomers
 
 # ipv4 for legacy
-ipv4=$(dig A +short '${domain}')
+ipv4=$(dig A +short ${domain})
 
 
 # set up pre-routing

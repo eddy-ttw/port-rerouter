@@ -15,11 +15,15 @@ Planned features:
 * Config file for all user-defined variables
 
 
-For v1.x:
+For v1.0:
 * Automated checking domain of IP changes
 * Option to skip either IPv4/v6 checking
 * Verify if routing is working
 * Error handling and log file support
+* Removing routes support
 
+Beyond:
 * SystemD service support
 * Multi-domain and multiple port redirect support
+* Command line switching support
+
